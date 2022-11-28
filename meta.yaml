@@ -1,0 +1,43 @@
+{% set name = "django-tables2" %}
+{% set version = "2.4.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 6c72dd208358539e789e4c0efd7d151e43283a4aa4093a35f44c43489e7ddeaa
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+  host:
+    - django >=1.11
+    - pip
+    - python
+  run:
+    - django >=1.11
+    - python
+
+test:
+  imports:
+    - django_tables2
+    - django_tables2.columns
+    - django_tables2.export
+    - django_tables2.templatetags
+
+about:
+  home: "https://github.com/jieter/django-tables2/"
+  license: BSD
+  license_family: BSD
+  license_file: 
+  summary: "Table/data-grid framework for Django"
+  doc_url: https://django-tables2.readthedocs.io/en/latest/
+  dev_url: https://github.com/jieter/django-tables2
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gb119
