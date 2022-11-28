@@ -22,13 +22,6 @@ requirements:
     - django >=1.11
     - python
 
-test:
-  imports:
-    - django_tables2
-    - django_tables2.columns
-    - django_tables2.export
-    - django_tables2.templatetags
-
 about:
   home: "https://github.com/jieter/django-tables2/"
   license: BSD
